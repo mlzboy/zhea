@@ -1,0 +1,47 @@
+
+<import src="../common/head.wxml" />
+<import src="../common/foot.wxml" />
+
+<view class="container">
+    <template is="head" data="{{title: 'input'}}"/>
+    <view class="page-body">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+                <view class="page-section">
+              <view class="weui-cells__title">username</view>
+              <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                  <input class="weui-input" name="username" value="{{account.username}}" />
+                </view>
+              </view>
+            </view>
+                         
+            <view class="page-section">
+              <view class="weui-cells__title">password</view>
+              <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                  <input class="weui-input" name="password" value="{{account.password}}" />
+                </view>
+              </view>
+            </view>
+                         
+            <view class="page-section">
+              <view class="weui-cells__title">openid</view>
+              <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                  <input class="weui-input" name="openid" value="{{account.openid}}" />
+                </view>
+              </view>
+            </view>
+                         
+        
+
+
+            <view class="btn-area">
+              <button type="primary" formType="submit">save</button>
+              <navigator url="/pages/gen/account/list"><button>back</button></navigator>
+            </view>
+        </form>
+    </view>
+
+    <template is="foot" />
+</view>
