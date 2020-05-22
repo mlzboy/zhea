@@ -1,47 +1,14 @@
+<i-message id="message" />
+<i-panel title="杭州市小汽车总量调控管理信息系统">
+    <i-input value="{{account.username}}" title="用户名" autofocus placeholder="手机号" id="username" maxlength="20" bind:change="get_value"/>
+    <i-input value="{{account.password}}" type="number" title="密　码" placeholder="含有数字和字母，长度在8-20位" id="password" maxlength="20" bind:change="get_value"/>
+</i-panel>
 
-<import src="../common/head.wxml" />
-<import src="../common/foot.wxml" />
-
-<view class="container">
-    <template is="head" data="{{title: 'input'}}"/>
-    <view class="page-body">
-        <form catchsubmit="formSubmit" catchreset="formReset">
-                <view class="page-section">
-              <view class="weui-cells__title">username</view>
-              <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell weui-cell_input">
-                  <input class="weui-input" name="username" value="{{account.username}}" />
-                </view>
-              </view>
-            </view>
-                         
-            <view class="page-section">
-              <view class="weui-cells__title">password</view>
-              <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell weui-cell_input">
-                  <input class="weui-input" name="password" value="{{account.password}}" />
-                </view>
-              </view>
-            </view>
-                         
-            <view class="page-section">
-              <view class="weui-cells__title">openid</view>
-              <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell weui-cell_input">
-                  <input class="weui-input" name="openid" value="{{account.openid}}" />
-                </view>
-              </view>
-            </view>
-                         
-        
+<i-row i-class="row-class">
+    <i-col span="8" i-class="col-class"><i-button bind:click="del" inline type="default">　删除　</i-button></i-col>
+    <i-col span="8" offset="8" i-class="col-class light"><i-button bind:click="update" inline type="primary">　修改　</i-button></i-col>
+</i-row>
 
 
-            <view class="btn-area">
-              <button type="primary" formType="submit">save</button>
-              <navigator url="/pages/gen/account/list"><button>back</button></navigator>
-            </view>
-        </form>
-    </view>
 
-    <template is="foot" />
-</view>
+

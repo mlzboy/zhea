@@ -8,20 +8,14 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  var d = new Date();
-  event.data["timestamp"] = d.getTime()
-  console.log("%%%%%%%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
-  console.log(event.data)
-  let data = await db.collection('accounts').where({
-    _id: event._id
+  let accounts = await db.collection('accounts').doc(event._id).remove({
+    success: function(res) {
+      console.log(res.data)
+    }
   })
-  .update({
-    data: event.data,
-  })
-  return {
-    event,
-    openid: wxContext.OPENID,
-    appid: wxContext.APPID,
-    unionid: wxContext.UNIONID,
-  }
+
+
+
+
+  return accounts.data
 }

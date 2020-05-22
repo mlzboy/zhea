@@ -1,28 +1,8 @@
-
-
-   <view class="index">
-  <view class="index-hd">
-    <!-- <image class="index-logo" src="resources/kind/logo.png"></image> -->
-    <view class="index-desc">以下将展示小程序官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见 <navigator url="pages/doc-web-view/doc-web-view" class="weui-agree__link">小程序开发文档</navigator>。</view>
-  </view>
-  <view class="index-bd">
-    <view class="kind-list">
-          <block wx:for-items="{{accounts}}" wx:key="{{item._id}}">
-              <view class="kind-list-item-bd kind-list-item-bd-show">
-                <view class="navigator-box navigator-box-show">
-                    <navigator url="update?_id={{item._id}}" class="navigator">
-                      <view class="navigator-text">{{item.username}}</view>
-                      <view class="navigator-arrow"></view>
-                    </navigator>
-                </view>
-              </view>
-          </block>
-
-    </view>
-  </view>
-</view>
-            <view class="btn-area">
-            <navigator url="create">
-              <button type="primary">添加汽车摇号账号</button>
-            </navigator>
-            </view>
+<i-panel title="摇号账号列表">
+    <i-cell-group>
+        <block wx:for-items="{{accounts}}" wx:key="{{item._id}}">
+          <i-cell title="{{item.username}}" is-link url="update?_id={{item._id}}"></i-cell>
+        </block>
+    </i-cell-group>
+</i-panel>
+<navigator url="create"><i-button type="primary">新增一组自动摇号</i-button></navigator>

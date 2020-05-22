@@ -14,6 +14,7 @@
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -47,6 +48,27 @@
 					"id": -1,
 					"name": "pages/gen/account/list",
 					"pathName": "pages/gen/account/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/gen/account/create",
+					"pathName": "pages/gen/account/create",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/button/index",
+					"pathName": "pages/button/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"scene": null
 				}
 			]

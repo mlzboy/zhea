@@ -10,6 +10,7 @@ exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   var d = new Date();
   event["timestamp"] = d.getTime()
+  event["openid"] = wxContext.OPENID;
   console.log("%%%%%%%%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
   console.log(event)
   let ret = await db.collection('accounts').add({

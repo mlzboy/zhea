@@ -1,3 +1,4 @@
+const { $Message } = require('../../dist/base/index');
 
 
 // miniprogram/pages/gen/account/create.js
@@ -7,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    dict:{}
    
   },
 
@@ -65,10 +67,49 @@ Page({
   onShareAppMessage: function () {
 
   },
- 
+ get_value:function(e){
+
+  this.data.dict[e.currentTarget.id] = e.detail.detail.value;
+
+  this.setData({
+
+    dict: this.data.dict
+    
+    });
+
+  console.log(e.detail.detail.value,e.currentTarget.id);
+  console.log(this.data.dict)
+
+ },
+
+
+ submit:async function(e){
+
+    var number_fields = []
+    for (var key in this.data.dict)
+    {
+      　　if (number_fields.includes(key))
+          {
+              this.data.dict[key] = parseFloat(this.data.dict[key])
+          }
+    }
+    $Message({
+      content: '新增成功',
+      type: 'error'
+  });
+    let data = await wx.cloud.callFunction({
+      name: 'gen_account_create',
+      data: this.data.dict
+    })
+    wx.redirectTo({
+      url: 'list',
+    })
+
+ },
+
   formSubmit: async function(e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value)
-    //console.log(e.detail.value.title)
+    console.log(e.detail.value)
 
     var number_fields = []
     var dict = e.detail.value;
@@ -79,6 +120,8 @@ Page({
               dict[key] = parseFloat(dict[key])
           }
     }
+
+    
 
     let data = await wx.cloud.callFunction({
       name: 'gen_account_create',
