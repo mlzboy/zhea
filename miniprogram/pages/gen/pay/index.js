@@ -1,11 +1,11 @@
-// miniprogram/pages/gen/intro/index.js
+// miniprogram/pages/gen/pay/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    current:"remind"
+    current:"mine"
   },
 
   /**
@@ -63,10 +63,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-
-
   handleChange ({ detail }) {
-
     let url = "";
     switch(detail.key){
         case "remind":
@@ -82,15 +79,6 @@ Page({
     wx.redirectTo({
       url: url
     })
-
-
-
-},
-
-handleContact (e) {
-  console.log(e.detail.path)
-  console.log(e.detail.query)
-}
-
+    }
 
 })

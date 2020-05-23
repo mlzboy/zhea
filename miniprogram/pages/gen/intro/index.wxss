@@ -1,3 +1,7 @@
+.content{
+  margin:0 50rpx 0 50rpx;
+  line-height: 60rpx;
+}
 .i-steps-demo{
   margin:20px;
 }

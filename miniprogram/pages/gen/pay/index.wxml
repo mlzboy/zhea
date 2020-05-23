@@ -1,0 +1,23 @@
+    <i-notice-bar icon="systemprompt">
+        转账一定要添加备注：用户ID
+    </i-notice-bar>    
+    <i-panel title="开通服务">
+        <i-cell-group>
+            <view class="zz"><image style="width: 200px; height: 200px; background-color: white;" mode="aspectFit" src="./1.png"></image></view>
+            <i-button type="success" inline>　用户ID:111(点击复制)　</i-button>
+            <i-button type="success" inline>　下载二维码　</i-button>
+
+        </i-cell-group>
+    </i-panel>
+
+<i-tab-bar id="mybar" current="{{current}}" color="#024FFD" bindchange="handleChange" style="z-index:200;position:fixed;bottom:0;width:100%">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="支付"></i-tab-bar-item>
+</i-tab-bar>
+  <button open-type="contact" bindcontact="handleContact" class="add-wrap" style="width:180rpx;">
+  <view class="icon-item">
+  <i-icon type="customerservice_fill" size="28" color="#024FFD"></i-icon>
+  <view class="icon-item-name">客服</view>
+  </view>
+  </button>

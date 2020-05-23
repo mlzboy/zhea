@@ -76,6 +76,13 @@
 					"id": -1,
 					"name": "pages/gen/intro/index",
 					"pathName": "pages/gen/intro/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/gen/pay/index",
+					"pathName": "pages/gen/pay/index",
 					"scene": null
 				}
 			]

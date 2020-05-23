@@ -121,12 +121,21 @@ Page({
     //     current: detail.key
     // });
 
-    if (detail.key == "remind"){
-
-      wx.redirectTo({
-        url: '../intro/index'
-      })
+    let url = "";
+    switch(detail.key){
+        case "remind":
+          url='../intro/index';
+          break;
+        case "mine":
+          url = "../pay/index";
+          break;
+        default: 
+          url = "../account/list";
+          break;
     }
+    wx.redirectTo({
+      url: url
+    })
 }
 
 
