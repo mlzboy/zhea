@@ -7,9 +7,25 @@
         </i-cell-group>
     </i-panel>
     <navigator url="create"><i-button type="primary">新增一组自动摇号</i-button></navigator>
-    <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="aspectFit" src="./1.png"></image>
-    <i-button type="default" inline>用户ID:111(点击复制)</i-button>
-    <i-button type="default" inline>下载二维码</i-button>
+    <i-panel>
+        <i-cell title="自动摇号服务状态(2010.5.26已续摇)">
+            <i-switch value="{{switch1}}" bind:change="onChange" slot="footer"></i-switch>
+        </i-cell>
+        <i-notice-bar icon="systemprompt">
+        转账后服务状态在一个工作日内更新
+        </i-notice-bar>
+    </i-panel>
+
+    <i-panel title="开通服务">
+        <i-cell-group>
+            <view class="zz"><image style="width: 200px; height: 200px; background-color: white;" mode="aspectFit" src="./1.png"></image></view>
+            <i-button type="success" inline>　用户ID:111(点击复制)　</i-button>
+            <i-button type="success" inline>　下载二维码　</i-button>
+            <i-notice-bar icon="systemprompt">
+                转账一定要添加备注：用户ID
+            </i-notice-bar>
+        </i-cell-group>
+    </i-panel>
 </scroll-view>
 
 
@@ -17,3 +33,9 @@
     <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
     <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
 </i-tab-bar>
+  <button open-type="contact" bindcontact="handleContact" class="add-wrap" style="width:180rpx;">
+  <view class="icon-item">
+  <i-icon type="customerservice_fill" size="28" color="#024FFD"></i-icon>
+  <view class="icon-item-name">客服</view>
+  </view>
+  </button>
