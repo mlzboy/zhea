@@ -11,8 +11,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    let settings = await wx.cloud.callFunction({
+      name: 'get_settings',
+      data: {
+      }
+    })
+    this.setData({for_check:settings.result.for_check})
   },
 
   /**

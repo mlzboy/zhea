@@ -43,6 +43,7 @@
         </view>
     </i-step>
 </i-steps>
+<block wx:if="{{!for_check}}">
 <view class="one-tag">服务开通流程</view>
 <i-steps current="{{verticalCurrent}}" direction="vertical">
     <i-step>
@@ -69,9 +70,11 @@
         </view>
     </i-step>
 </i-steps>
-
+</block>
 <i-tab-bar current="{{current}}" color="#024FFD" bindchange="handleChange" style="position:fixed;bottom:0;width:100%">
     <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
     <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
+    <block wx:if="{{!for_check}}">
     <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="支付"></i-tab-bar-item>
+    </block>
 </i-tab-bar>

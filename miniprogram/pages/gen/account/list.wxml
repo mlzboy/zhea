@@ -7,15 +7,17 @@
         </i-cell-group>
     </i-panel>
     <navigator url="create"><i-button type="primary">新增一组自动摇号</i-button></navigator>
-<view style="height:50px"></view>
+<!-- <view style="height:80px"></view> -->
 
     <i-panel>
         <i-cell title="②自动摇号服务状态{{show_crawlered_at}}">
             <i-switch value="{{is_vip}}" bind:change="onChange" slot="footer"></i-switch>
         </i-cell>
+        <block wx:if="{{!for_check}}">
         <i-notice-bar icon="systemprompt">
         转账后服务状态在一个工作日内更新
         </i-notice-bar>
+        </block>
     </i-panel>
 
 </scroll-view>
@@ -24,7 +26,9 @@
 <i-tab-bar id="mybar" current="{{current}}" color="#024FFD" bindchange="handleChange" style="z-index:200;position:fixed;bottom:0;width:100%">
     <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
     <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
+    <block wx:if="{{!for_check}}">
     <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="支付"></i-tab-bar-item>
+    </block>
 </i-tab-bar>
   <button open-type="contact" bindcontact="handleContact" class="add-wrap" style="width:180rpx;">
   <view class="icon-item">

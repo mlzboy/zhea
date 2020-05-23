@@ -14,3 +14,7 @@
 =======
 # zhea
 >>>>>>> b2a27d71e1022e2eb825a08e83d26942c235fe04
+
+
+修改数据库中settings中for_check为false当上线通过后
+另外，修改customer_reponse中的content函数

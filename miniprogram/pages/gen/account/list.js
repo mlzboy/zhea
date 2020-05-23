@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+        for_check:true,
         // 页面总高度将会放在这里
         windowHeight: 0,
         // navbar的高度
@@ -40,8 +41,15 @@ Page({
       {
           show_crawlered_at = "(" + data.result.crawlered_at + "已续摇)"
       }
-
       this.setData({accounts:accounts.result,current:"homepage",is_vip:data.result.is_vip,show_crawlered_at:show_crawlered_at}) 
+      
+      let settings = await wx.cloud.callFunction({
+        name: 'get_settings',
+        data: {
+        }
+      })
+      console.log("settings============================",settings)
+      this.setData({for_check:settings.result.for_check})
 
 
         var that = this;
@@ -128,6 +136,25 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  onChange: async function(e){
+
+    let settings = await wx.cloud.callFunction({
+      name: 'get_settings',
+      data: {
+      }
+    })
+
+    let for_check = settings.result.for_check
+
+    if (!for_check)
+    {
+      let url = "../pay/index";
+      wx.redirectTo({
+        url: url
+      })
+    }
 
   },
   handleChange ({ detail }) {
