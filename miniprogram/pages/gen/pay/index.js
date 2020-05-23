@@ -18,7 +18,12 @@ Page({
       }
     })
     console.log("========>>>>>>",data)
-    this.setData({user:data.result}) 
+    let pic_url = "";
+    let user = data.result;
+    if (user.cnt <= 6){
+      pic_url = "./"+ user.cnt.toString() + ".png"
+    }
+    this.setData({user:user,pic_url:pic_url}) 
   },
 
   /**

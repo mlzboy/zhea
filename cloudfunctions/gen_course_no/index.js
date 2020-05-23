@@ -33,6 +33,11 @@ exports.main = async (event, context) => {
           }
       })
 
+
+      //查找摇号列表对应的数量
+      let accounts = await db.collection('accounts').where({openid:openid}).get()
+      let cnt = accounts.data.length
+
       //add
       console.log("add")
       let ret = await db.collection('users').add({
@@ -42,6 +47,7 @@ exports.main = async (event, context) => {
                 openid:openid,
                 // openid2:event.userInfo.openId,
                 is_vip:false,
+                cnt:cnt,
                 // course_name:event.userInfo.nickname+"老师的课堂"
                 course_no:settings.data.course_no + 1
             }
@@ -53,15 +59,25 @@ exports.main = async (event, context) => {
 
 
       return {
-        course_no:settings.data.course_no+1
+        course_no:settings.data.course_no+1,
+        cnt:cnt,
+        is_vip:false
       }
 
   }
   else{
+      //查找摇号列表对应的数量
+      let accounts = await db.collection('accounts').where({openid:openid}).get()
+      let cnt = accounts.data.length
+
+      let users = await db.collection("users").where({openid:openid}).update({data:{cnt:cnt}})
+      console.log("ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZz999999999999999999999999z")
+      // console.log(users.data)
+      let result2 = await db.collection('users').where({
+        openid: openid
+      }).get()
       console.log("direct return")
-      return {
-        course_no:result.data[0].course_no
-      }      
+      return result2.data[0]     
 
   }
 
