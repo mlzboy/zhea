@@ -4,3 +4,22 @@
     <i-input value="" type="number" title="密　码" placeholder="含有数字和字母，长度在8-20位" id="password" maxlength="20" bind:change="get_value"/>
 </i-panel>
 <i-button type="primary" bind:tap="submit">新增一组自动摇号</i-button>
+
+
+
+
+
+
+<i-tab-bar id="mybar" current="{{current}}" color="#024FFD" bindchange="handleChange" style="z-index:200;position:fixed;bottom:0;width:100%">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
+    <block wx:if="{{!for_check}}">
+    <i-tab-bar-item key="mine" icon="mine" current-icon="mine_fill" title="支付"></i-tab-bar-item>
+    </block>
+</i-tab-bar>
+  <button open-type="contact" bindcontact="handleContact" class="add-wrap" style="width:180rpx;">
+  <view class="icon-item">
+  <i-icon type="customerservice_fill" size="28" color="#024FFD"></i-icon>
+  <view class="icon-item-name">客服</view>
+  </view>
+  </button>
