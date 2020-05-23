@@ -4,11 +4,12 @@ const cloud = require('wx-server-sdk')
 
 cloud.init()
 const db = cloud.database()   
-
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  let accounts = await db.collection('accounts').get()
+  let openid = wxContext.OPENID;
+
+  let accounts = await db.collection('accounts').where({openid: openid}).get()
   console.log("###########################")
   console.log(accounts)
   return accounts.data
