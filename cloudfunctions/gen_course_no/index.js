@@ -49,7 +49,8 @@ exports.main = async (event, context) => {
                 is_vip:false,
                 cnt:cnt,
                 // course_name:event.userInfo.nickname+"老师的课堂"
-                course_no:settings.data.course_no + 1
+                course_no:settings.data.course_no + 1,
+                crawlered_at:""
             }
           })
       console.log("$$$$$$$$$$$$$$$$$$")

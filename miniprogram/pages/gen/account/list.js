@@ -27,7 +27,21 @@ Page({
           current: 'homepage'
         }
       })
-      this.setData({accounts:accounts.result,current:"homepage"}) 
+
+      let data = await wx.cloud.callFunction({
+        name: 'gen_course_no',
+        data: {
+        }
+      })
+      let show_crawlered_at = ""
+      console.log("====================")
+      console.log(data.result)
+      if (data.result.crawlered_at.length>0)
+      {
+          show_crawlered_at = "(" + data.result.crawlered_at + "已续摇)"
+      }
+
+      this.setData({accounts:accounts.result,current:"homepage",is_vip:data.result.is_vip,show_crawlered_at:show_crawlered_at}) 
 
 
         var that = this;

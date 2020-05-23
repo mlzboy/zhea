@@ -10,8 +10,8 @@
 <view style="height:50px"></view>
 
     <i-panel>
-        <i-cell title="②自动摇号服务状态(2010.5.26已续摇)">
-            <i-switch value="{{switch1}}" bind:change="onChange" slot="footer"></i-switch>
+        <i-cell title="②自动摇号服务状态{{show_crawlered_at}}">
+            <i-switch value="{{is_vip}}" bind:change="onChange" slot="footer"></i-switch>
         </i-cell>
         <i-notice-bar icon="systemprompt">
         转账后服务状态在一个工作日内更新
