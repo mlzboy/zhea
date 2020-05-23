@@ -1,0 +1,7 @@
+.i-steps-demo{
+  margin:20px;
+}
+.one-tag{
+  font-size:14px;
+  margin:5px 5px 10px 10px;
+}

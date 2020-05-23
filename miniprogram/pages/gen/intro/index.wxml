@@ -1,0 +1,57 @@
+<view class="one-tag">产品原理</view>
+<i-steps current="{{verticalCurrent}}" direction="vertical">
+    <i-step>
+        <view slot="title">
+              保存摇号账号
+        </view>
+        <view slot="content">
+            
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            定时启动浏览器中进行登录
+        </view>
+        <view slot="content">
+            在沙箱环境自动执行，保证信息安全，无人工干预
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            完成当期申请续摇操作
+        </view>
+        <view slot="content">
+            
+        </view>
+    </i-step>
+</i-steps>
+<view class="one-tag">服务开通流程</view>
+<i-steps current="{{verticalCurrent}}" direction="vertical">
+    <i-step>
+        <view slot="title">
+              保存摇号账号
+        </view>
+        <view slot="content">
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            支付金额（一组一元，长期有效，摇到为止）
+        </view>
+        <view slot="content">
+            转账务必添加备注，注明唯一ID
+        </view>
+    </i-step>
+    <i-step>
+        <view slot="title">
+            账号状态变更
+        </view>
+        <view slot="content">
+            一个工作日内会变为已开通，续摇后变更为x月x日已续摇
+        </view>
+    </i-step>
+</i-steps>
+<i-tab-bar current="{{current}}" color="#024FFD" bindchange="handleChange" style="position:fixed;bottom:0;width:100%">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
+</i-tab-bar>

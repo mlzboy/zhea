@@ -2,7 +2,8 @@
   "pages": [
     "pages/gen/account/update",
     "pages/gen/account/list",
-    "pages/gen/account/create"
+    "pages/gen/account/create",
+    "pages/gen/intro/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -11,5 +12,11 @@
     "navigationBarTitleText": "浙A汽车自动摇号助手",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "wxparserPlugin": {
+      "version": "0.3.0",
+      "provider": "wx9d4d4ffa781ff3ac"
+    }
+  }
 }

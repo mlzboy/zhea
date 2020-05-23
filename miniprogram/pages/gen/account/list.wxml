@@ -6,3 +6,7 @@
     </i-cell-group>
 </i-panel>
 <navigator url="create"><i-button type="primary">新增一组自动摇号</i-button></navigator>
+<i-tab-bar current="{{current}}" color="#024FFD" bindchange="handleChange" style="position:fixed;bottom:0;width:100%">
+    <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
+</i-tab-bar>

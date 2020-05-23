@@ -1,26 +1,18 @@
-
-
-// miniprogram/pages/gen/account/list.js
+// miniprogram/pages/gen/intro/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    current:"remind"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
-      let accounts = await wx.cloud.callFunction({
-        name: 'gen_account_get_list',
-        data: {
-          current: 'homepage'
-        }
-      })
-      this.setData({accounts:accounts.result,current:"homepage"}) 
+  onLoad: function (options) {
+
   },
 
   /**
@@ -71,18 +63,21 @@ Page({
   onShareAppMessage: function () {
 
   },
-  handleChange ({ detail }) {
-    // this.setData({
-    //     current: detail.key
-    // });
 
-    if (detail.key == "remind"){
+
+  handleChange ({ detail }) {
+
+    if (detail.key == "homepage"){
 
       wx.redirectTo({
-        url: '../intro/index'
+        url: '../account/list'
       })
+
+  //        wx.navigateTo({
+  //         url: '../account/list'
+
+  //  })
     }
+
 }
-
-
 })

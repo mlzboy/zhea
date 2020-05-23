@@ -8,10 +8,10 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   console.log("ttttttttttt",event)
   const wxContext = cloud.getWXContext()
-  db.collection('accounts').doc(event._id).remove({
+  let ret = await db.collection('accounts').doc(event._id).remove({
     success: function(res) {
       console.log(res.data)
     }
   })
-
+  return {}
 }
