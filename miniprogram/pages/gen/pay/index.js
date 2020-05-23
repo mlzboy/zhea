@@ -20,8 +20,14 @@ Page({
     console.log("========>>>>>>",data)
     let pic_url = "";
     let user = data.result;
-    if (user.cnt <= 6){
+    if (user.cnt <= 6 && user.cnt > 0){
       pic_url = "./"+ user.cnt.toString() + ".png"
+    }
+    else if (user.cnt == 0){
+      pic_url = "./1.png"
+    }
+    else{
+      pic_url = "./6.png"
     }
     this.setData({user:user,pic_url:pic_url}) 
   },
@@ -68,14 +74,17 @@ Page({
 
   },
 copy:function(e){
+  console.log("zzzzzzzzzzzzzzzzzzzzz",e.currentTarget.dataset.courseno)
+  var c = e.currentTarget.dataset.courseno;
+  console.log("ccc",c)
+  console.log("zzz",this.data.user.course_no)
+  var that = this;
+  var cc = this.data.user.course_no.toString()
   wx.setClipboardData({
-    data: 'data',
+    data: cc,
     success (res) {
-      wx.getClipboardData({
-        success (res) {
-          console.log(res.data) // data
-        }
-      })
+      console.log("bbbbbbbbbbbbb",res)
+
     }
   })
 },
