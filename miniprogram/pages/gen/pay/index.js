@@ -11,8 +11,14 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: async function (options) {
+    let data = await wx.cloud.callFunction({
+      name: 'gen_course_no',
+      data: {
+      }
+    })
+    console.log("========>>>>>>",data)
+    this.setData({user:data.result}) 
   },
 
   /**
@@ -56,7 +62,18 @@ Page({
   onReachBottom: function () {
 
   },
-
+copy:function(e){
+  wx.setClipboardData({
+    data: 'data',
+    success (res) {
+      wx.getClipboardData({
+        success (res) {
+          console.log(res.data) // data
+        }
+      })
+    }
+  })
+},
   /**
    * 用户点击右上角分享
    */
