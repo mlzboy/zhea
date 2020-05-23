@@ -9,6 +9,7 @@
   </view>
   </button>
 <!-- </view> -->
+<scroll-view scroll-y="true" style="width: 100%;height:{{scrollViewHeight}}px">
 <view class="one-tag">产品介绍</view>
 <view class="content">
 浙A汽车自动摇号助手，是一款面向正在申请杭州机动车牌照用户的小产品，以前每隔三个月就要逼你去点，人总有忘记的时候，生活已经如此艰难，这等小事交给我们吧，定期续摇，摇到为止。
@@ -71,7 +72,9 @@
     </i-step>
 </i-steps>
 </block>
-<i-tab-bar current="{{current}}" color="#024FFD" bindchange="handleChange" style="position:fixed;bottom:0;width:100%">
+
+</scroll-view>
+<i-tab-bar id="mybar" current="{{current}}" color="#024FFD" bindchange="handleChange" style="position:fixed;bottom:0;width:100%">
     <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
     <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
     <block wx:if="{{!for_check}}">

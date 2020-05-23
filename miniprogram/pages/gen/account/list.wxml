@@ -1,4 +1,4 @@
-<scroll-view scroll-y="true" bindscroll="scroll" style="width: 100%;height:{{scrollViewHeight}}px">
+<scroll-view scroll-y="true" style="width: 100%;height:{{scrollViewHeight}}px">
     <i-panel title="①摇号账号列表">
         <i-cell-group>
             <block wx:for-items="{{accounts}}" wx:key="{{item._id}}">

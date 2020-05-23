@@ -6,7 +6,15 @@ Page({
    */
   data: {
     for_check:true,
-    current:"remind"
+    current:"remind",
+            // 页面总高度将会放在这里
+            windowHeight: 0,
+            // navbar的高度
+            navbarHeight: 0,
+            // header的高度
+            headerHeight: 0,
+            // scroll-view的高度
+            scrollViewHeight: 0
   },
 
   /**
@@ -19,6 +27,46 @@ Page({
       }
     })
     this.setData({for_check:settings.result.for_check})
+
+
+
+    var that = this;
+
+    // 先取出页面高度 windowHeight
+    wx.getSystemInfo({
+      success: function(res) {
+          that.setData({
+              windowHeight: res.windowHeight
+          });
+      }
+  });
+
+  // 然后取出navbar和header的高度
+  // 根据文档，先创建一个SelectorQuery对象实例
+  let query = wx.createSelectorQuery().in(this);
+  // 然后逐个取出navbar和header的节点信息
+  // 选择器的语法与jQuery语法相同
+  query.select('#mybar').boundingClientRect();
+  query.select('#mybar').boundingClientRect();
+
+  // 执行上面所指定的请求，结果会按照顺序存放于一个数组中，在callback的第一个参数中返回
+  query.exec((res) => {
+      // 分别取出navbar和header的高度
+      let navbarHeight = res[0].height;
+      let headerHeight = res[1].height;
+
+      // 然后就是做个减法
+      // let scrollViewHeight = this.data.windowHeight - navbarHeight - headerHeight;
+      let scrollViewHeight = this.data.windowHeight - navbarHeight;
+
+      // 算出来之后存到data对象里面
+      this.setData({
+          scrollViewHeight: scrollViewHeight
+      });
+  });
+
+
+
   },
 
   /**
