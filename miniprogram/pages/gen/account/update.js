@@ -7,6 +7,7 @@ Page({
   * 页面的初始数据
   */
  data: {
+    for_check:true,
     dict:{}
  },
 
@@ -23,8 +24,37 @@ Page({
      })
      console.log("========>>>>>>",data)
      this.setData({account:data.result}) 
- },
 
+     let settings = await wx.cloud.callFunction({
+      name: 'get_settings',
+      data: {
+      }
+    })
+    console.log("settings============================",settings)
+    this.setData({for_check:settings.result.for_check})
+
+ },
+ handleChange ({ detail }) {
+  // this.setData({
+  //     current: detail.key
+  // });
+
+  let url = "";
+  switch(detail.key){
+      case "remind":
+        url='../intro/index';
+        break;
+      case "mine":
+        url = "../pay/index";
+        break;
+      default: 
+        url = "../account/list";
+        break;
+  }
+  wx.redirectTo({
+    url: url
+  })
+},
  /**
   * 生命周期函数--监听页面初次渲染完成
   */
