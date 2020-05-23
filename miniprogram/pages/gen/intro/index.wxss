@@ -5,3 +5,62 @@
   font-size:14px;
   margin:5px 5px 10px 10px;
 }
+
+.add-wrap {
+  z-index: 100;
+  position:fixed;
+  bottom:210rpx;
+  right:30rpx;
+  display:flex;
+  width:50%;
+  justify-content:flex-end;
+}
+
+.add-wrap image {
+  width:50px;
+  height:50px;
+}
+
+.share{
+  width: 50rpx;
+  height: 50rpx;
+  padding:0 20rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-size: 50rpx 50rpx;
+  background-repeat:no-repeat;
+  background-image:url("https://cloud-minapp-23060.cloud.ifanrusercontent.com/1jcJ80WJZNyEDr6f.png");
+  border:none;
+  border-width: 0rpx;
+  color:transparent;
+}
+
+.icon-item-name{
+  font-size: 10px;
+  color:#024FFD;
+}
+
+.icon-item{
+  display: block;
+  padding: 16px 0;
+  width: 33.33%;
+  float: left;
+  text-align: center;
+}
+
+
+button::after {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  line-height: inherit;
+}

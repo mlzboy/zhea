@@ -5,7 +5,8 @@
     "i-tab-bar-item": "../../dist/tab-bar-item/index",
     "i-steps": "../../dist/steps/index",
     "i-step": "../../dist/step/index",
-    "i-panel": "../../dist/panel/index"
+    "i-panel": "../../dist/panel/index",
+    "i-icon": "../../dist/icon/index"
 
   }
 }

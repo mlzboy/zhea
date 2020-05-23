@@ -1,3 +1,14 @@
+
+<!-- <view  hover-class="plus-hover"> -->
+  <!-- <image src="./ring.png"></image> -->
+  <!-- <button open-type="contact" bindcontact="handleContact" class="share"></button> -->
+  <button open-type="contact" bindcontact="handleContact" class="add-wrap" style="width:180rpx;">
+  <view class="icon-item">
+  <i-icon type="customerservice_fill" size="28" color="#024FFD"></i-icon>
+  <view class="icon-item-name">客服</view>
+  </view>
+  </button>
+<!-- </view> -->
 <view class="one-tag">产品原理</view>
 <i-steps current="{{verticalCurrent}}" direction="vertical">
     <i-step>
@@ -51,6 +62,7 @@
         </view>
     </i-step>
 </i-steps>
+
 <i-tab-bar current="{{current}}" color="#024FFD" bindchange="handleChange" style="position:fixed;bottom:0;width:100%">
     <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="首页"></i-tab-bar-item>
     <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="介绍"></i-tab-bar-item>
