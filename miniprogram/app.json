@@ -13,11 +13,5 @@
     "navigationBarTitleText": "浙A汽车自动摇号助手",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json",
-  "plugins": {
-    "wxparserPlugin": {
-      "version": "0.3.0",
-      "provider": "wx9d4d4ffa781ff3ac"
-    }
-  }
+  "sitemapLocation": "sitemap.json"
 }
