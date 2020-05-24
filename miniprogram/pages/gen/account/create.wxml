@@ -1,7 +1,7 @@
 <i-message id="message" />
 <i-panel title="杭州市小汽车总量调控管理信息系统">
     <i-input value="" title="用户名" autofocus placeholder="手机号" id="username" maxlength="20" bind:change="get_value"/>
-    <i-input value="" type="number" title="密　码" placeholder="含有数字和字母，长度在8-20位" id="password" maxlength="20" bind:change="get_value"/>
+    <i-input value="" title="密　码" placeholder="含有数字和字母，长度在8-20位" id="password" maxlength="20" bind:change="get_value"/>
 </i-panel>
 <i-button type="primary" bind:tap="submit">新增一组自动摇号</i-button>
 
