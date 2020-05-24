@@ -27,7 +27,7 @@ exports.main = async (event, context) => {
       console.log(settings.data)
 
       
-      await db.collection('settings').doc('1d1104975e9e397e00a7a95e6b00d0b3').update({
+      await db.collection('settings').doc('b05d218a5ec8c38f0014456b3a6bb713').update({
           data:{
               course_no:_.inc(1)
           }
